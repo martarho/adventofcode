@@ -1,5 +1,6 @@
 # Advent of Code 
 
+```
        *     *
              ___   *
        *   _|___|_      *
@@ -11,5 +12,6 @@
      jgs |    o    |      *
    ---.---\   o   /-----.---
            '-----'` 
+```
 
 Solutions to the Advent of Code Challenge. 
