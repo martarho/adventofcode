@@ -1,3 +1,4 @@
+# https://adventofcode.com/2021/day/1
 measurements = []
 window_size = 3
 count = 0
