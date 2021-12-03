@@ -23,6 +23,7 @@ def remove_strings(string_list, idx, keeper):
 
 def get_ratio_string(string_list, freq_index=0, max_freq=2):
     list_of_ints = list(range(max_freq))[::-1]
+    index_length = len(string_list[0])
     for idx in range(index_length):
         transposed = l2tl(string_list)
         c = Counter(transposed[idx])
@@ -38,7 +39,6 @@ def get_ratio_string(string_list, freq_index=0, max_freq=2):
     return string_list
 
 measurements = load_measurements()
-index_length = len(measurements[0])
 o2 = get_ratio_string(measurements, 0, 2)
 co2 = get_ratio_string(measurements, 1, 2)
 
