@@ -12,11 +12,14 @@ def load_file(filename):
         coords.append(coord_tuple)
     return coords
 
+    # Cool alternative I found later:
+    # x1,y1,x2,y2 = [[int(x) for x in re.findall('\d+', line)] for line in fileinput.input()]
+    # coord_tuple = [[x1,y1],[x2,y2]]
+    
 def select_lines(coords, diagonal=False):
     filtered_coords = []
     for line in coords:
-        x1,y1 = line[0]
-        x2,y2 = line[1]
+        (x1,y1),(x2,y2) = line[0],line[1]
         if diagonal:
             if abs(x1-x2) == abs(y1-y2):
                 filtered_coords.append(line)
@@ -26,25 +29,17 @@ def select_lines(coords, diagonal=False):
     return filtered_coords
 
 def expand_axis(line, axis=0):
-    x1 = line[0][axis]
-    x2 = line[1][axis]
-    rev = False
-    if x1 == x2:
-        return [x1]
-    elif x1 > x2:
-        xrnge = [i for i in range(x2,x1+1)][::-1]
-    else:
-        xrnge = [i for i in range(x1,x2+1)]
-    return xrnge
+    x1,x2 = line[0][axis], line[1][axis]
+    if x1 > x2:
+        return [i for i in range(x1,x2-1,-1)]
+    return [i for i in range(x1,x2+1)]
 
 def expand_coords(line, diagonal=False):
     xaxis = expand_axis(line, axis=0)
     yaxis = expand_axis(line, axis=1) 
     if diagonal:
-        all_coords = list(zip(xaxis,yaxis))
-    else:
-        all_coords = list(product(xaxis,yaxis))
-    return all_coords
+        return list(zip(xaxis,yaxis))
+    return list(product(xaxis,yaxis))
 
 if __name__ == "__main__":
     filename="../data/day05_input.txt"
