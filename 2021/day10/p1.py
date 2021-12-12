@@ -1,13 +1,11 @@
 from statistics import median
 
-fh = open("../data/day10_input.txt", 'r')
-code = []
-for l in fh.readlines():
-    code.append(list(l.rstrip()))
-
-chr_map = {'(':')','<':'>','{':'}','[':']'}
-scoring_map = {')':3,']':57,'}':1197,'>':25137}
-scoring_map2 = {')':1,']':2,'}':3,'>':4}
+def load_data(filename="../data/day10_test.txt"):
+    fh = open("../data/day10_input.txt", 'r')
+    code = []
+    for l in fh.readlines():
+        code.append(list(l.rstrip()))
+    return code
 
 def check_line(l):
     ll = []
@@ -32,6 +30,11 @@ def complete_line(l):
     rev = [chr_map[c] for c in reversed(ll)]
     return rev
 
+chr_map = {'(':')','<':'>','{':'}','[':']'}
+scoring_map = {')':3,']':57,'}':1197,'>':25137}
+scoring_map2 = {')':1,']':2,'}':3,'>':4}
+
+code = load_data("../data/day10_input.txt")
 part1_score = 0
 incomplete_lines = []
 for line in code:
