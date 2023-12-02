@@ -1,5 +1,4 @@
 from lib import *
-from loguru import logger
 import typing
 import os
 import re
@@ -47,6 +46,6 @@ def problem(f: typing.Union[str, os.PathLike]) -> None:
 
 
 logger.debug("Problem 1+2 - test data")
-problem("data/d02_test.txt")
+problem("d02_test.txt")
 logger.debug("Part 1+2 - real data")
-problem("data/d02.txt")
+problem("d02.txt")
