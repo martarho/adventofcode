@@ -94,7 +94,7 @@ logger.debug("--- Problem 2 - test")
 problem2("data/d01_test2.txt")
 
 logger.debug("--- Problem 2")
-problem2("data/d01_part1.txt")
+problem2("data/d01.txt")
 
 logger.debug("--- Problem 2 w/ re")
-problem2_approach2("data/d01_part2.txt")
+problem2_approach2("data/d01.txt")
