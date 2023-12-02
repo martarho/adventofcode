@@ -3,7 +3,11 @@ import typing
 import os
 
 
-def get_data_path(filename: str):
+def get_data_path(filename: str) -> str:
+    """
+    Creates flexible paths for input files to ensure
+    they execute at any folder level.
+    """
     current_dir = os.path.dirname(os.path.abspath(__file__))
 
     while True:
