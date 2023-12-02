@@ -85,7 +85,7 @@ def problem2_approach2(f: typing.Union[str, os.PathLike]) -> None:
 
 
 logger.debug("--- Problem 1 - test")
-problem1("data/d01_test.txt")
+problem1("data/d01_test1.txt")
 
 logger.debug("--- Problem 1")
 problem1("data/d01.txt")
@@ -94,7 +94,7 @@ logger.debug("--- Problem 2 - test")
 problem2("data/d01_test2.txt")
 
 logger.debug("--- Problem 2")
-problem2("data/d01_part2.txt")
+problem2("data/d01_part1.txt")
 
 logger.debug("--- Problem 2 w/ re")
 problem2_approach2("data/d01_part2.txt")
